@@ -676,6 +676,7 @@ html, body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   transition: 0.3s;
 }
+dog_hero.jpg
 
 #contactBtn:hover {
   background: rgba(245,240,220,0.9);
