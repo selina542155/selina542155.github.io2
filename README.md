@@ -676,7 +676,15 @@ html, body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   transition: 0.3s;
 }
-dog_hero.jpg
+![Image](https://github.com/user-attachments/assets/a53de448-ca91-4b06-b84a-729cb361f0ee)
+
+![Image](https://github.com/user-attachments/assets/7efeeb7f-c66f-43ec-8d78-c99997125f43)
+
+<!-- Uploading "dog_hero.jpg"... -->
+
+![Image](https://github.com/user-attachments/assets/49b15bf6-e9cd-4628-86bf-c4e69650e08f)
+
+![Image](https://github.com/user-attachments/assets/580ca612-e766-4ec5-b2b1-2c9289211126)
 
 #contactBtn:hover {
   background: rgba(245,240,220,0.9);
