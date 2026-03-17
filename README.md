@@ -123,3 +123,561 @@ const close = document.getElementsByClassName("close")[0];
 btn.onclick = () => modal.style.display = "flex";  // 버튼 클릭 시 표시
 close.onclick = () => modal.style.display = "none"; // 닫기 버튼
 window.onclick = e => { if(e.target === modal) modal.style.display = "none"; } // 배경 클릭
+html { scroll-behavior: smooth; font-family: 'Noto Sans KR', sans-serif; margin:0; padding:0; }
+body { margin:0; padding:0; }
+
+/* 섹션 공통 */
+section { position: relative; height:120vh; background-size: cover; background-position: center; display:flex; overflow:hidden; }
+
+/* Hero 섹션 */
+.hero {
+  position: relative;
+  height: 110vh; /* 화면보다 살짝 높게, 너무 길지 않음 */
+  background-image: url('images/dog_hero.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: flex-start;     /* 상단 정렬 */
+  overflow: hidden;
+}
+
+/* Hero 사선 그라데이션 */
+.hero-gradient-top {
+  position: absolute;
+  top: 0; right: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.3)0%, rgba(0,0,0,0.1)50%, rgba(0,0,0,0)100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-gradient-bottom {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(315deg, rgba(0,0,0,0.3)0%, rgba(0,0,0,0.1)50%, rgba(0,0,0,0)100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero 텍스트 */
+
+.hero-intro {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+.hero-text h1{
+  position:absolute;
+  top:50px; right:30px;
+  z-index:2; color:#fff;
+}
+.hero-text h2{
+  position:absolute;
+  bottom:40px; left:30px;
+  z-index:2; color:#fff;
+}
+.hero-text h1 { font-size:70px; margin:0; }
+.hero-text h2 { font-size:40px; margin:10px 0 0 0; }
+
+/* About 섹션 */
+.about {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* 글과 사진 세로 중앙 정렬 */
+  background: #fff;
+  padding: 50px 0; /* 위 아래 여백 */
+  position: relative;
+}
+
+.about-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 80px; /* 사진과 글 사이 간격 */
+}
+
+/* 사진 */
+.about-pic {
+  width: 50%;          /* 사진 너비 고정 */
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  align-self: center;
+  margin-left: -200px;  /* 컨테이너 안에서 세로 중앙 */
+}
+
+/* 글 */
+.about-info {
+  width: 50%;
+  color: #000;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 중앙 정렬 */
+  padding: 0;             /* 사진과 같은 높이를 유지하고, 패딩은 필요 시 조절 */
+}
+
+.about-info h2 {
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.about-info p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.about-info ul {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.about-info ul {
+  list-style: none;   /* 점 제거 */
+  padding-left: 0;    /* 기본 들여쓰기 제거 */
+  margin: 20px 0 0 0; /* 위 여백 약간 추가 */
+}
+
+.about-info ul li {
+  margin: 30px 0;     /* 위아래 간격 넓히기 */
+  font-size: 18px;
+}
+
+/* Bottom 섹션 */
+.bottom {
+  position: relative;
+  background-image: url('images/dog_bottom.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* 섹션 높이 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  color: #fff;
+}
+
+/* 은은한 gradient */
+.bottom-gradient {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 제목 + 메뉴 묶음 */
+.bottom-content {
+  position: relative;
+  z-index: 2;
+  text-align: center; /* 중앙 정렬 */
+}
+
+/* 섹션 제목 */
+.bottom-title {
+  font-size: 48px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* 메뉴 */
+.menu-bar {
+  display: flex;           /* 가로 배열 */
+  justify-content: center; /* 중앙 정렬 */
+  gap: 50px;               /* 메뉴 간격 넓게 */
+  font-size: 24px;
+}
+
+.menu-bar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu-bar a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+
+/* 섹션 경계 흐림용 overlay */
+.section-overlay {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-bar a::after {
+  content: '';
+  display: block;
+  height: 2px; /* 굵기 조절 */
+  margin: 8px 0;
+  background: rgba(255,255,255,0.4); /* 좀 더 진하게 */
+}
+
+.section-overlay.top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0));
+}
+
+.section-overlay.bottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0.7), rgba(255,255,255,0));
+}
+
+@media screen and (max-width: 768px) {
+  .menu-bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+.floating-btn {
+  position: fixed;
+  right:40px;
+  z-index:1000;
+  padding:18px 28px;
+  border-radius:30px; /* 둥글둥글 */
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  transition:0.3s;
+  text-align:center;
+  text-decoration:none;
+}
+
+/* 플로팅 메인 버튼 */
+.btn-floating {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  padding: 15px 25px;
+  background: #556b2f; /* 올리브색 */
+  color: #fff;         /* 흰색 글씨 */
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.btn-floating:hover {
+  background: rgba(85,107,47,0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn-floating:hover {
+  background: rgba(27,77,62,0.9);
+}
+
+
+/* 버튼 컨테이너 */
+#contactBtnContainer {
+  position: fixed;       /* 화면에 떠있게 */
+  bottom: 40px;          /* 화면 아래 여백 */
+  right: 40px;           /* 화면 오른쪽 여백 */
+  z-index: 1000;
+}
+
+/* 버튼 스타일 */
+#contactBtn {
+  background: rgba(245, 240, 220, 0.7); /* 베이지 반투명 카드 느낌 */
+  color: #1b4d3e;                       /* 진한 초록 글씨 */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px 28px;                    /* 충분한 패딩 */
+  border-radius: 25px;                   /* 부드러운 모서리 */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* 그림자 */
+  transition: 0.3s;
+}
+
+#contactBtn:hover {
+  background: rgba(245, 240, 220, 0.9);  /* 살짝 진해지도록 */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* 문의사항 버튼 */
+#contactBtnContainer {
+  position: fixed;
+  bottom: 90px; /* 메인 버튼 위쪽으로 띄우기 */
+  right: 40px;
+  z-index: 1010; /* 메인 버튼보다 위 */
+}
+
+#contactBtn {
+  background: rgba(245, 240, 220, 0.7); /* 카드 느낌 베이지 */
+  color: #1b4d3e;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px 28px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+#contactBtn:hover {
+  background: rgba(245, 240, 220, 0.9);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.hero-wrapper {
+  background-image: url('images/dog_bottom예비2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero 영역 */
+.detail-hero {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: transparent;
+  padding-bottom: 30px;
+}
+
+/* h1 중앙 + 입체 */
+.detail-menu h1 {
+  color: #1b4d3e;
+  font-size: 60px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px #fff;
+  position: relative;
+}
+
+/* 내용 영역 */
+.detail-content {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  background: transparent; /* hero-wrapper 배경 그대로 */
+}
+
+/* 카드 */
+.detail-card {
+  display: flex;
+  flex-wrap: wrap; /* 화면 작으면 밑으로 내려가도록 */
+  align-items: center; /* 세로 중앙 */
+  gap: 30px;
+  background: rgba(200, 200, 200, 0.85); /* 카드 반투명 */
+  padding: 40px 50px;
+  border-radius: 25px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.card-left img {
+  display: block; /* 혹시 inline 때문에 안 나오는 경우 방지 */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* 카드 안 정보 */
+.card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card-right p { margin: 5px 0; font-size: 18px; }
+
+/* 모든 페이지에서 오른쪽 하단 플로팅 버튼 */
+.global-floating-btn {
+  position: fixed;        /* 화면에 고정 */
+  bottom: 40px;           /* 아래쪽 여백 */
+  right: 40px;            /* 오른쪽 여백 */
+  z-index: 1000;          /* 다른 요소 위 */
+  padding: 15px 25px;
+  background: #556b2f;    /* 올리브색 */
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.global-floating-btn:hover {
+  background: rgba(85,107,47,0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   공통 배경 + 그림자 + 플로팅 버튼
+   ========================= */
+
+/* 전체 기본 스타일 */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Hero + 상세 페이지 배경 */
+.hero-wrapper {
+  background-image: url('images/dog_bottom예비2.jpg'); /* 실제 경로 확인 */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* 그림자 overlay (위에서 아래로) */
+.hero-overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* 그림자 길이 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 그림자 overlay (아래에서 위로) */
+.hero-overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Hero 제목 */
+.detail-hero {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  width: 100%;
+  position: relative;
+  z-index: 10; /* overlay보다 위 */
+}
+
+.detail-menu h1 {
+  color: #1b4d3e;
+  font-size: 60px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px #fff;
+  position: relative;
+}
+
+/* 카드 영역 (선택적) */
+.detail-content {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  background: transparent;
+  margin-top: -50px; /* Hero와 자연스럽게 이어지도록 */
+}
+
+.detail-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  background: rgba(200,200,200,0.85);
+  padding: 40px 50px;
+  border-radius: 25px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.card-left img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card-right p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+/* =========================
+   플로팅 버튼 공통
+   ========================= */
+.btn-main-floating{
+  position: fixed;       /* 화면에 고정 */
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;         /* 모든 요소 위 */
+  padding: 15px 25px;
+  background: #556b2f;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.btn-main-floating{:hover {
+  background: rgba(85,107,47,0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* 문의사항 버튼 */
+#contactBtnContainer {
+  position: fixed;
+  bottom: 100px; /* 메인 버튼 위 */
+  right: 40px;
+  z-index: 9999;
+}
+
+#contactBtn {
+  background: rgba(245,240,220,0.7); /* 카드 느낌 */
+  color: #1b4d3e;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px 28px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+#contactBtn:hover {
+  background: rgba(245,240,220,0.9);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
