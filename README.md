@@ -1,279 +1,287 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JiHye Portfolio</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body { font-family:'Noto Sans KR', sans-serif; margin:0; background:#f5f5f5; }
+section { position: relative; text-align:center; }
+.hero { height:100vh; display:flex; justify-content:center; align-items:center; background:#556b2f; color:#fff; flex-direction:column; }
+.hero h1 { font-size:3em; margin:0; }
+.hero h2 { font-size:1.5em; margin:10px 0 0 0; }
+.about { padding:50px 20px; display:flex; flex-direction:column; align-items:center; }
+.about-info { max-width:600px; margin-bottom:30px; }
+.about-pic { width:250px; height:250px; border-radius:50%; background-size:cover; background-position:center; margin-bottom:30px; border:3px solid #fff; }
+.bottom { padding:50px 20px; background:#e0e0e0; }
+.menu-bar a { margin:0 15px; color:#1b4d3e; text-decoration:none; font-weight:bold; }
+.menu-bar a:hover { text-decoration:underline; }
+
+/* 카드 스타일 */
+.detail-card { background:rgba(255,255,255,0.9); border-radius:25px; padding:30px; max-width:900px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.25); margin:30px auto; text-align:left; }
+.detail-card h2 { color:#1b4d3e; margin-bottom:15px; }
+.detail-card ul { list-style:none; padding:0; margin:0; font-size:18px; }
+.detail-card ul li { padding:10px 15px; border-bottom:1px solid rgba(0,0,0,0.1); }
+.detail-card ul li:last-child { border-bottom:none; }
+
+/* 플로팅 버튼 */
+.floating-btn { position: fixed; right:40px; padding:18px 28px; border-radius:30px; font-size:18px; font-weight:bold; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.25); text-align:center; transition:0.3s; }
+.btn-main-floating { bottom:40px; background:#556b2f; color:#fff; border-radius:30px; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.2); position:fixed; right:40px; z-index:1000; padding:15px 25px; }
+.btn-main-floating:hover { background: rgba(85,107,47,0.9); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+#contactBtnContainer { position:fixed; right:40px; bottom:180px; z-index:1010; }
+#contactBtn { background:#fffacd; color:#556b2f; border:none; border-radius:25px; padding:18px 28px; font-size:18px; font-weight:bold; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+#contactBtn:hover { background:#f5f5b0; }
+</style>
 </head>
 <body>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-gradient-top"></div>
-  <div class="hero-text">
-    <h1>Growing with Animals</h1>
-    <h2>ChoiJiHye | Pet Industry Portfolio</h2>
-  </div>
-  <div class="hero-gradient-bottom"></div>
+  <h1>Growing with Animals</h1>
+  <h2>ChoiJiHye | Pet Industry Portfolio</h2>
 </section>
 
 <!-- About -->
 <section class="about">
-  <div class="about-container">
-    <div class="section-overlay top"></div>
-    <div class="section-overlay bottom"></div>
-    <div class="about-pic" style="background-image: url('images/dog_with_me.jpg');"></div>
-    <div class="about-info">
-      <h2>ChoiJiHye</h2>
-      <p>제가 키우는 9살 말티즈 강이와 함께 지내며 <br>반려동물 산업에서 경험을 쌓고 꾸준히 배우며 성장하고 있습니다.</p>
-      <ul>
-        <li>반려동물과 함께 배우고 성장하는 것을 즐깁니다.</li>
-        <li>병원과 현장에서 다양한 경험을 쌓으며 동물과 사람 모두에게 도움을 주는 일을 추구하고 있습니다.</li>
-        <li>꾸준히 배우고 도전하며, <br>반려동물 산업에서 전문성을 키워가고 있습니다.</li>
-      </ul>
-    </div>
+  <div class="about-pic" style="background-image:url('https://raw.githubusercontent.com/USERNAME/portfolio/main/images/dog_with_me.jpg');"></div>
+  <div class="about-info">
+    <h2>ChoiJiHye</h2>
+    <p>제가 키우는 9살 말티즈 강이와 함께 지내며 반려동물 산업에서 경험을 쌓고 꾸준히 배우며 성장하고 있습니다.</p>
+    <ul>
+      <li>반려동물과 함께 배우고 성장하는 것을 즐깁니다.</li>
+      <li>병원과 현장에서 다양한 경험을 쌓으며 동물과 사람 모두에게 도움을 주는 일을 추구합니다.</li>
+      <li>꾸준히 배우고 도전하며, 반려동물 산업에서 전문성을 키워가고 있습니다.</li>
+    </ul>
   </div>
 </section>
 
 <!-- Bottom -->
 <section class="bottom" id="bottom">
-  <div class="bottom-gradient"></div>
-  <div class="bottom-content">
-    <h2 class="bottom-title">Explore More</h2>
-    <div class="menu-bar">
-      <a href="details/experience.html">Experience</a>
-      <a href="details/projects.html">Projects</a>
-      <a href="details/activities.html">Activities</a>
-      <a href="details/contact.html">Contact</a>
-    </div>
+  <h2>Explore More</h2>
+  <div class="menu-bar">
+    <a href="details/experience.html">Experience</a>
+    <a href="details/projects.html">Projects</a>
+    <a href="details/activities.html">Activities</a>
+    <a href="details/contact.html">Contact</a>
   </div>
 </section>
 
+<!-- 플로팅 버튼 -->
+<a href="#bottom" class="btn-main-floating">↓ Explore</a>
+<div id="contactBtnContainer">
+  <button id="contactBtn" class="floating-btn">문의사항 남기기</button>
+</div>
+
 <script>
-window.addEventListener("DOMContentLoaded", () => {
-  if (window.location.hash === "#bottom") {
-    const bottom = document.getElementById("bottom");
-    if (bottom) {
-      setTimeout(() => {
-        bottom.scrollIntoView({ behavior: "smooth" });
-      }, 50);
-    }
-  }
-  const bottomLinks = document.querySelectorAll('a[href="#bottom"]');
-  bottomLinks.forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      const bottom = document.getElementById("bottom");
-      if (bottom) {
-        bottom.scrollIntoView({ behavior: "smooth" });
-        history.pushState(null, null, "#bottom");
-      }
-    });
-  });
+// 문의사항 버튼 클릭 → 구글폼 새 창
+document.getElementById("contactBtn").addEventListener("click", () => {
+  window.open("https://forms.gle/YOUR_FORM_ID","_blank");
 });
 </script>
+
 </body>
 </html>
-
-<!-- details/experience.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Experience | JiHye Portfolio</title>
-<link rel="stylesheet" href="../style.css">
+<style>
+body { margin:0; font-family:'Noto Sans KR', sans-serif; background:#f5f5f5; }
+.hero-wrapper { background-image: url('https://raw.githubusercontent.com/selina542155/portfolio/main/images/dog_bottom2.jpg'); background-size: cover; background-position: center; min-height: 35vh; display:flex; justify-content:center; align-items:flex-end; }
+.detail-menu h1 { color:white; font-size:60px; margin:0; text-align:center; text-shadow:2px 2px 4px #000; position:relative; }
+.detail-menu::after { content:""; position:absolute; left:50%; width:80%; height:3px; background:#fff; opacity:0.8; border-radius:2px; transform:translateX(-50%); }
+.detail-content { display:flex; justify-content:center; padding:50px 20px; }
+.detail-card { background:white; border-radius:25px; padding:30px; max-width:900px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.25); display:flex; flex-direction:column; align-items:center; }
+.detail-card ul { list-style:none; padding:0; width:100%; font-size:18px; margin:0; }
+.detail-card ul li { padding:10px 15px; border-bottom:1px solid rgba(0,0,0,0.1); }
+.detail-card ul li:last-child { border-bottom:none; }
+.btn-main-floating { position: fixed; bottom: 40px; right: 40px; padding:18px 28px; border-radius:30px; font-weight:bold; background:#556b2f; color:#fff; text-decoration:none; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+.btn-main-floating:hover { background: rgba(85,107,47,0.9); }
+#contactBtnContainer { position:fixed; right:40px; bottom:100px; z-index:1010; }
+#contactBtn { background:#fffacd; color:#556b2f; border:none; border-radius:25px; padding:18px 28px; font-size:18px; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+#contactBtn:hover { background:#f5f5b0; }
+</style>
 </head>
 <body>
-
-<div class="hero-wrapper" style="background-image: url('../images/dog_bottom2.jpg');">
-  <section class="detail-hero">
-    <div class="detail-menu">
-      <h1>Experience</h1>
-    </div>
-  </section>
-  <section class="detail-content">
-    <div class="detail-card">
-      <p>동물 관련 경험을 적는 공간입니다.</p>
-      <ul>
-        <li>병원 인턴 근무 경험</li>
-        <li>애견 유치원 근무 경험</li>
-        <li>학생회 활동 프로젝트</li>
-      </ul>
-    </div>
-  </section>
+<div class="hero-wrapper">
+  <div class="detail-menu"><h1>Experience</h1></div>
 </div>
+
+<section class="detail-content">
+  <div class="detail-card">
+    <p>동물 관련 경험을 적는 공간입니다.</p>
+    <ul>
+      <li>병원 인턴 근무 경험</li>
+      <li>애견 유치원 근무 경험</li>
+      <li>학생회 활동 프로젝트</li>
+    </ul>
+  </div>
+</section>
 
 <a href="../index.html#bottom" class="btn-main-floating">← 메인으로 돌아가기</a>
 <div id="contactBtnContainer">
-  <button id="contactBtn" class="floating-btn">문의사항 남기기</button>
+  <button id="contactBtn">문의사항 남기기</button>
 </div>
+
 <script>
-const contactBtn = document.getElementById("contactBtn");
-contactBtn.addEventListener("click", () => {
-  window.open("https://forms.gle/YOUR_FORM_ID", "_blank");
-});
+document.getElementById("contactBtn").addEventListener("click", ()=>{ window.open("https://forms.gle/YOUR_FORM_ID","_blank"); });
 </script>
 </body>
 </html>
-
-<!-- details/projects.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | JiHye Portfolio</title>
-<link rel="stylesheet" href="../style.css">
+<style>
+body { margin:0; font-family:'Noto Sans KR', sans-serif; background:#f5f5f5; }
+.hero-wrapper { background-image: url('https://raw.githubusercontent.com/selina542155/portfolio/main/images/dog_bottom2.jpg'); background-size: cover; background-position: center; min-height: 35vh; display:flex; justify-content:center; align-items:flex-end; }
+.detail-menu h1 { color:white; font-size:60px; margin:0; text-align:center; text-shadow:2px 2px 4px #000; position:relative; }
+.detail-menu::after { content:""; position:absolute; left:50%; width:80%; height:3px; background:#fff; opacity:0.8; border-radius:2px; transform:translateX(-50%); }
+.detail-content { display:flex; justify-content:center; padding:50px 20px; }
+.detail-card { background:white; border-radius:25px; padding:30px; max-width:900px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.25); display:flex; flex-direction:column; align-items:center; }
+.detail-card ul { list-style:none; padding:0; width:100%; font-size:18px; margin:0; }
+.detail-card ul li { padding:10px 15px; border-bottom:1px solid rgba(0,0,0,0.1); }
+.detail-card ul li:last-child { border-bottom:none; }
+.btn-main-floating { position: fixed; bottom: 40px; right: 40px; padding:18px 28px; border-radius:30px; font-weight:bold; background:#556b2f; color:#fff; text-decoration:none; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+.btn-main-floating:hover { background: rgba(85,107,47,0.9); }
+#contactBtnContainer { position:fixed; right:40px; bottom:100px; z-index:1010; }
+#contactBtn { background:#fffacd; color:#556b2f; border:none; border-radius:25px; padding:18px 28px; font-size:18px; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+#contactBtn:hover { background:#f5f5b0; }
+</style>
 </head>
 <body>
-<div class="hero-wrapper" style="background-image: url('../images/dog_bottom2.jpg');">
-  <section class="detail-hero">
-    <div class="detail-menu">
-      <h1>Projects</h1>
-    </div>
-  </section>
-  <section class="detail-content">
-    <div class="detail-card">
-      <p>참여했던 프로젝트 내용을 소개합니다.</p>
-      <ul>
-        <li>국립공원 ESG 지원 활동 프로젝트</li>
-        <li>학생회 반려동물 행사 프로젝트</li>
-        <li>POSCO M-TECH 협업 프로젝트 영상 제작</li>
-      </ul>
-    </div>
-  </section>
+<div class="hero-wrapper">
+  <div class="detail-menu"><h1>Projects</h1></div>
 </div>
+
+<section class="detail-content">
+  <div class="detail-card">
+    <p>참여했던 프로젝트 내용을 소개합니다.</p>
+    <ul>
+      <li>국립공원 ESG 지원 활동 프로젝트</li>
+      <li>학생회 반려동물 행사 프로젝트</li>
+      <li>POSCO M-TECH 협업 프로젝트 영상 제작</li>
+    </ul>
+  </div>
+</section>
+
 <a href="../index.html#bottom" class="btn-main-floating">← 메인으로 돌아가기</a>
 <div id="contactBtnContainer">
-  <button id="contactBtn" class="floating-btn">문의사항 남기기</button>
+  <button id="contactBtn">문의사항 남기기</button>
 </div>
+
 <script>
-const contactBtn = document.getElementById("contactBtn");
-contactBtn.addEventListener("click", () => {
-  window.open("https://forms.gle/YOUR_FORM_ID", "_blank");
-});
+document.getElementById("contactBtn").addEventListener("click", ()=>{ window.open("https://forms.gle/YOUR_FORM_ID","_blank"); });
 </script>
 </body>
 </html>
-
-<!-- details/activities.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Activities | JiHye Portfolio</title>
-<link rel="stylesheet" href="../style.css">
+<style>
+body { margin:0; font-family:'Noto Sans KR', sans-serif; background:#f5f5f5; }
+.hero-wrapper { background-image: url('https://raw.githubusercontent.com/selina542155/portfolio/main/images/dog_bottom2.jpg'); background-size: cover; background-position: center; min-height: 35vh; display:flex; justify-content:center; align-items:flex-end; }
+.detail-menu h1 { color:white; font-size:60px; margin:0; text-align:center; text-shadow:2px 2px 4px #000; position:relative; }
+.detail-menu::after { content:""; position:absolute; left:50%; width:80%; height:3px; background:#fff; opacity:0.8; border-radius:2px; transform:translateX(-50%); }
+.detail-content { display:flex; justify-content:center; padding:50px 20px; }
+.detail-card { background:white; border-radius:25px; padding:30px; max-width:900px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.25); display:flex; flex-direction:column; align-items:center; }
+.detail-card ul { list-style:none; padding:0; width:100%; font-size:18px; margin:0; }
+.detail-card ul li { padding:10px 15px; border-bottom:1px solid rgba(0,0,0,0.1); }
+.detail-card ul li:last-child { border-bottom:none; }
+.btn-main-floating { position: fixed; bottom: 40px; right: 40px; padding:18px 28px; border-radius:30px; font-weight:bold; background:#556b2f; color:#fff; text-decoration:none; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+.btn-main-floating:hover { background: rgba(85,107,47,0.9); }
+#contactBtnContainer { position:fixed; right:40px; bottom:100px; z-index:1010; }
+#contactBtn { background:#fffacd; color:#556b2f; border:none; border-radius:25px; padding:18px 28px; font-size:18px; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+#contactBtn:hover { background:#f5f5b0; }
+</style>
 </head>
 <body>
-<div class="hero-wrapper" style="background-image: url('../images/dog_bottom2.jpg');">
-  <section class="detail-hero">
-    <div class="detail-menu">
-      <h1>Activities</h1>
-    </div>
-  </section>
-  <section class="detail-content">
-    <div class="detail-card">
-      <p>참여했던 다양한 활동과 봉사 경험을 적는 공간입니다.</p>
-      <ul>
-        <li>학생회 활동</li>
-        <li>National Park ESG 지원</li>
-        <li>POSCO M-TECH 프로젝트 참여</li>
-      </ul>
-    </div>
-  </section>
+<div class="hero-wrapper">
+  <div class="detail-menu"><h1>Activities</h1></div>
 </div>
+
+<section class="detail-content">
+  <div class="detail-card">
+    <p>참여했던 다양한 활동과 봉사 경험을 적는 공간입니다.</p>
+    <ul>
+      <li>학생회 활동</li>
+      <li>National Park ESG 지원</li>
+      <li>POSCO M-TECH 프로젝트 참여</li>
+    </ul>
+  </div>
+</section>
+
 <a href="../index.html#bottom" class="btn-main-floating">← 메인으로 돌아가기</a>
 <div id="contactBtnContainer">
-  <button id="contactBtn" class="floating-btn">문의사항 남기기</button>
+  <button id="contactBtn">문의사항 남기기</button>
 </div>
+
 <script>
-const contactBtn = document.getElementById("contactBtn");
-contactBtn.addEventListener("click", () => {
-  window.open("https://forms.gle/YOUR_FORM_ID", "_blank");
-});
+document.getElementById("contactBtn").addEventListener("click", ()=>{ window.open("https://forms.gle/YOUR_FORM_ID","_blank"); });
 </script>
 </body>
 </html>
-
-<!-- details/contact.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | JiHye Portfolio</title>
-<link rel="stylesheet" href="../style.css">
+<style>
+body { margin:0; font-family:'Noto Sans KR', sans-serif; background:#f5f5f5; }
+.hero-wrapper { background-image: url('https://raw.githubusercontent.com/selina542155/portfolio/main/images/dog_bottom2.jpg'); background-size: cover; background-position: center; min-height: 35vh; display:flex; justify-content:center; align-items:flex-end; }
+.detail-menu h1 { color:white; font-size:60px; margin:0; text-align:center; text-shadow:2px 2px 4px #000; position:relative; }
+.detail-menu::after { content:""; position:absolute; left:50%; width:80%; height:3px; background:#fff; opacity:0.8; border-radius:2px; transform:translateX(-50%); }
+.detail-content { display:flex; justify-content:center; padding:50px 20px; }
+.detail-card { background:rgba(180,180,180,0.9); border-radius:25px; padding:30px; max-width:500px; width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.25); display:flex; flex-direction:column; align-items:center; }
+.detail-card h2 { margin:0 0 15px 0; color:#1b4d3e; text-shadow: 1px 1px 2px #fff; }
+.detail-card ul { list-style:none; padding:0; width:100%; font-size:18px; margin:0; }
+.detail-card ul li { padding:10px 15px; border-bottom:1px solid rgba(0,0,0,0.1); }
+.detail-card ul li:last-child { border-bottom:none; }
+.btn-main-floating { position: fixed; bottom: 40px; right: 40px; padding:18px 28px; border-radius:0px; font-weight:bold; background:#556b2f; color:#fff; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.2); transition:0.3s; }
+.btn-main-floating:hover { background: rgba(85,107,47,0.9); }
+#contactBtnContainer { position:fixed; right:40px; bottom:100px; z-index:1010; }
+#contactBtn { background:#fffacd; color:#556b2f; border:none; border-radius:25px; padding:18px 28px; font-size:18px; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.25); transition:0.3s; }
+#contactBtn:hover { background:#f5f5b0; }
+</style>
 </head>
 <body>
-<div class="hero-wrapper" style="background-image: url('../images/dog_bottom2.jpg');">
-  <section class="detail-hero">
-    <div class="detail-menu">
-      <h1>Contact</h1>
-    </div>
-  </section>
-  <section class="detail-content">
-    <div class="detail-card" style="background: rgba(180,180,180,0.9);">
-      <div class="about-pic" style="background-image: url('../images/profilejpg.jpg'); width:150px; height:150px; border-radius:50%; border:3px solid #556b2f; margin-bottom:20px;"></div>
-      <h2>최지혜</h2>
-      <div class="section-title">연락처</div>
-      <ul>
-        <li>전화: 010-1234-5678</li>
-        <li>이메일: example@email.com</li>
-      </ul>
-      <div class="section-title">학력</div>
-      <ul>
-        <li>신라대학교 반려동물학과 졸업</li>
-      </ul>
-    </div>
-  </section>
+<div class="hero-wrapper">
+  <div class="detail-menu"><h1>Contact</h1></div>
 </div>
+
+<section class="detail-content">
+  <div class="detail-card">
+    <h2>최지혜</h2>
+    <div class="section-title">연락처</div>
+    <ul>
+      <li>전화: 010-1234-5678</li>
+      <li>이메일: example@email.com</li>
+    </ul>
+    <div class="section-title">학력</div>
+    <ul>
+      <li>신라대학교 반려동물학과 졸업</li>
+    </ul>
+  </div>
+</section>
+
 <a href="../index.html#bottom" class="btn-main-floating">← 메인으로 돌아가기</a>
 <div id="contactBtnContainer">
-  <button id="contactBtn" class="floating-btn">문의사항 남기기</button>
+  <button id="contactBtn">문의사항 남기기</button>
 </div>
+
 <script>
-const contactBtn = document.getElementById("contactBtn");
-contactBtn.addEventListener("click", () => {
-  window.open("https://forms.gle/YOUR_FORM_ID", "_blank");
-});
+document.getElementById("contactBtn").addEventListener("click", ()=>{ window.open("https://forms.gle/YOUR_FORM_ID","_blank"); });
 </script>
 </body>
 </html>
-
-<!-- style.css -->
-body, html { margin:0; padding:0; font-family:'Noto Sans KR', sans-serif; scroll-behavior: smooth; }
-.hero { height:100vh; position:relative; background:#f0f0f0; display:flex; justify-content:center; align-items:center; text-align:center; }
-.hero-gradient-top, .hero-gradient-bottom { position:absolute; width:100%; height:50%; left:0; }
-.hero-gradient-top { top:0; background:linear-gradient(to bottom, rgba(0,0,0,0.5), transparent); }
-.hero-gradient-bottom { bottom:0; background:linear-gradient(to top, rgba(0,0,0,0.5), transparent); }
-.hero-text h1 { font-size:3rem; color:#fff; }
-.hero-text h2 { font-size:1.5rem; color:#ddd; margin-top:10px; }
-
-.about { position:relative; padding:100px 20px; background:#f8f8f8; display:flex; justify-content:center; }
-.about-container { display:flex; max-width:1200px; gap:50px; flex-wrap:wrap; }
-.about-pic { width:300px; height:300px; background-size:cover; background-position:center; border-radius:15px; flex-shrink:0; }
-.about-info { flex:1; }
-.about-info h2 { font-size:2rem; margin-bottom:20px; }
-.about-info p { font-size:1.2rem; margin-bottom:20px; }
-.about-info ul { list-style:disc; padding-left:20px; }
-
-.bottom { position:relative; padding:100px 20px; background:#556b2f; color:#fff; text-align:center; }
-.bottom-gradient { position:absolute; width:100%; height:100%; left:0; top:0; background:linear-gradient(to top, #556b2f, transparent); opacity:0.8; }
-.bottom-title { font-size:2.5rem; margin-bottom:30px; }
-.menu-bar a { margin:0 15px; color:#fff; text-decoration:none; font-weight:bold; }
-
-.hero-wrapper { width:100%; height:100vh; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; align-items:center; }
-.detail-hero { background:rgba(0,0,0,0.4); width:100%; text-align:center; padding:50px 0; }
-.detail-hero h1 { color:#fff; font-size:3rem; }
-.detail-content { padding:50px 20px; max-width:1000px; margin:0 auto; }
-.detail-card { background:rgba(255,255,255,0.9); padding:30px; border-radius:10px; margin-bottom:30px; }
-
-.btn-main-floating { position:fixed; bottom:20px; left:20px; padding:10px 20px; background:#556b2f; color:#fff; border:none; border-radius:5px; cursor:pointer; text-decoration:none; }
-.floating-btn { position:fixed; bottom:20px; right:20px; padding:10px 20px; background:#8fbc8f; color:#fff; border:none; border-radius:50px; cursor:pointer; }
 
  ![Image](https://github.com/user-attachments/assets/a53de448-ca91-4b06-b84a-729cb361f0ee)
 
