@@ -27,7 +27,41 @@ body {
   align-items: center;
   min-height: 100vh; /* Hero 영역 최소 높이 확보 */
 }
+/* hero-wrapper 안 내용 전체 세로·가로 중앙 정렬 */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* 세로 중앙 */
+  align-items: center;      /* 가로 중앙 */
+  min-height: 100vh;
+}
 
+/* 카드 텍스트 중앙 정렬 */
+.detail-card {
+  text-align: center;       /* 카드 안 텍스트 중앙 */
+  padding: 40px 30px;       /* 여백 조금 확대 */
+}
+
+/* 설명글 글씨 확대 */
+.detail-card p {
+  font-size: 20px;          /* 기존보다 크게 */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* 리스트 글씨 확대 */
+.detail-card ul li {
+  font-size: 18px;          /* 글씨 약간 키움 */
+  padding: 12px 15px;
+}
+
+/* 섹션 제목 중앙 정렬 */
+.section-title {
+  font-size: 22px;          /* 글씨 조금 키움 */
+  text-align: center;       /* 중앙 정렬 */
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
 /* Hero 영역 */
 .detail-hero {
   height: 35vh;
