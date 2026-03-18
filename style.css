@@ -122,7 +122,7 @@ section { position: relative; height:120vh; background-size: cover; background-p
 /* Bottom 섹션 */
 .bottom {
   position: relative;
-  background-image: url('../images/dong_bottom2.jpg');
+  background-image: url('images/dong_bottom2.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh; /* 섹션 높이 */
