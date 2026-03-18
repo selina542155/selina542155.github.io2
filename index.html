@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JiHye Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-gradient-top"></div>       <!-- 오른쪽 위 → 왼쪽 아래 -->
+
+  <div class="hero-text">
+    <h1>Creative content & Markeing Design </h1>
+    <h2>ChoiJiHye | Marketing Design Portfolio</h2>
+  </div>
+ 
+  <div class="hero-gradient-bottom"></div>    <!-- 왼쪽 아래 → 오른쪽 위 -->
+</section>
+
+<!-- About -->
+<section class="about">
+  <div class="about-container">
+  <div class="section-overlay.top"></div>     <!-- About 상단 흐림 -->
+  <div class="section-overlay.bottom"></div>  <!-- About 하단 흐림 -->
+    <img src="images/dog_with_me.jpg" class="about-pic" alt="JiHye와 강이">
+    <div class="about-info">
+      <h2>ChoiJiHye</h2>
+      <p>
+콘텐츠 제작과 디지털 마케팅에 관심을 가지고 다양한 프로젝트와 활동을 통해 콘텐츠 기획과 제작 경험을 쌓아왔습니다. 
+협업과 실무 경험을 통해 아이디어를 실제 콘텐츠로 구현하는 과정에 흥미를 느끼고 있으며, 
+마케팅 콘텐츠 디자인과 디지털 콘텐츠 제작 역량을 지속적으로 발전시키고 있습니다.
+      </p>
+
+      <ul>
+
+        <li>캠페인 및 홍보 활동을 통해 다양한 콘텐츠 제작 경험을 쌓았습니다.</li>
+
+        <li>팀 프로젝트와 협업을 통해 아이디어를 콘텐츠로 구현하는 경험을 했습니다.</li>
+
+        <li>카드뉴스, 홍보 콘텐츠 등 다양한 형태의 디지털 콘텐츠 제작에 참여했습니다.</li>
+
+        <li>콘텐츠 기획과 디자인 경험을 바탕으로 실무 역량을 꾸준히 발전시키고 있습니다.</li>
+
+      </ul>
+
+    </div> 
+</section>
+
+<!-- Bottom 섹션 -->
+<section class="bottom" id="bottom">
+  <div class="bottom-gradient"></div>
+  <div class="bottom-content">
+    <h2 class="bottom-title">Explore More</h2>
+    <div class="menu-bar">
+      
+      <a href="details/experience.html">Youngmind Campaign</a>
+      <a href="details/projects.html">National Park ESG Project</a>
+      <a href="details/activities.html">Baekyang Tutoring Program</a>
+      <a href="details/contact.html">Overseas Supporters Activity</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// 페이지 로딩 시 F5 새로고침 문제 방지 + 앵커 클릭 처리
+window.addEventListener("DOMContentLoaded", () => {
+
+  // 1. 세부 페이지에서 #bottom으로 온 경우
+  if (window.location.hash === "#bottom") {
+    const bottom = document.getElementById("bottom");
+    if (bottom) {
+      setTimeout(() => {
+        bottom.scrollIntoView({ behavior: "smooth" });
+      }, 50); // 요소 렌더링 안정 위해 약간 딜레이
+    }
+  }
+
+  // 2. 메인 페이지 내 앵커 클릭 시
+  const bottomLinks = document.querySelectorAll('a[href="#bottom"]');
+  bottomLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const bottom = document.getElementById("bottom");
+      if (bottom) {
+        bottom.scrollIntoView({ behavior: "smooth" });
+        history.pushState(null, null, "#bottom"); // 주소창에도 반영
+      }
+    });
+  });
+
+});
+</script>
+
+  <!-- Hero 섹션 하단 흐림 -->
+<div class="section-overlay bottom"></div>
+
+<!-- About 섹션 상단/하단 흐림 -->
+<div class="section-overlay top"></div>
+<div class="section-overlay bottom"></div>
+
+<!-- Bottom 섹션 상단 흐림 -->
+<div class="section-overlay top"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
