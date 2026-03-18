@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Park ESG Project | JiHye Portfolio</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<style>
+/* 전체 폰트 및 기본 스타일 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin:0;
+  background:#f5f5f5;
+}
+
+/* Hero + content 통합 배경 */
+.hero-wrapper {
+  background-image: url('../images/dog_bottom2.jpg'); /* ../images 기준 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Hero 영역 최소 높이 확보 */
+}
+
+/* Hero 영역 */
+.detail-hero {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.detail-menu h1 {
+  color: white;
+  font-size: 60px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px #fff; /* 약간 입체감 */
+  position: relative;
+}
+
+.detail-menu::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  width:80%;
+  height:3px;
+  background:#fff;
+  opacity:0.8;
+  border-radius:2px;
+  transform:translateX(-50%);
+}
+
+/* 카드 중앙 정렬 & 텍스트 중앙 */
+.detail-card {
+  align-items: center;   /* 중앙 정렬 */
+  text-align: center;    /* 카드 내 텍스트 중앙 정렬 */
+  padding: 40px 30px;    /* 여백 약간 확대 */
+}
+
+/* 설명글 글씨 확대 */
+.detail-card p {
+  font-size: 20px;       /* 기존 16~18px → 20px로 확대 */
+  line-height: 1.6;      /* 줄 간격 추가 */
+  margin-bottom: 20px;
+}
+
+/* 리스트 글씨 확대 */
+.detail-card ul li {
+  font-size: 18px;       /* 글씨 약간 키움 */
+  padding: 12px 15px;    /* 패딩 조정 */
+}
+
+/* 섹션 제목 중앙 정렬 */
+.section-title {
+  font-size: 22px;       /* 글씨 약간 키움 */
+  text-align: center;    /* 중앙 정렬 */
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+/* 카드 영역 */
+.detail-content {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  width: 100%;
+}
+
+.detail-card {
+  background: white 60%;
+  border-radius:25px;
+  padding:30px;
+  max-width:900px;
+  width:90%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* 프로필 사진 */
+.detail-card img {
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+  border:3px solid #556b2f;
+}
+
+/* 이름 */
+.detail-card h2 {
+  margin:0 0 15px 0;
+  color:#1b4d3e;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/* 섹션 제목 */
+.section-title {
+  font-weight:bold;
+  margin-top:20px;
+  margin-bottom:10px;
+  font-size:20px;
+  color:#1b4d3e;
+  align-self:flex-start;
+}
+
+/* 정보 리스트 */
+.detail-card ul {
+  list-style:none;
+  padding:0;
+  width:100%;
+  font-size:18px;
+  margin:0;
+}
+
+.detail-card ul li {
+  padding:10px 15px;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+.detail-card ul li:last-child {
+  border-bottom:none;
+}
+
+/* 플로팅 버튼 공통 */
+.floating-btn {
+  position: fixed;
+  right:40px;
+  padding:18px 28px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  text-align:center;
+  transition:0.3s;
+}
+
+/* 메인 버튼 */
+/* 플로팅 메인 버튼 */
+.btn-main-floating {
+  position: fixed;        /* 화면에 고정 */
+  bottom: 40px;           /* 아래쪽 여백 */
+  right: 40px;            /* 오른쪽 여백 */
+  z-index: 1000;          /* 다른 요소보다 위 */
+  padding: 15px 25px;     
+  background: #556b2f;    /* 올리브 색 */
+  color: #fff;            
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.btn-main-floating:hover {
+  background: rgba(85,107,47,0.9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.btn-main {
+  bottom:40px;
+  background:#556b2f;
+  color:#fff;
+  text-decoration:none;
+}
+.btn-main:hover { background: rgba(85,107,47,0.9); }
+
+/* 문의사항 버튼 */
+#contactBtnContainer {
+  position: fixed;  /* 화면에 고정 */
+  right: 40px;
+  bottom: 180px;    /* 메인 버튼 위 */
+  z-index: 1010;
+}
+
+#contactBtn {
+  background:#fffacd;
+  color:#556b2f;
+  border:none;
+  border-radius: 25px;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+#contactBtn {
+  background:#fffacd; /* 노랑 */
+  color:#556b2f;      /* 올리브그린 */
+  border:none;
+}
+#contactBtn:hover { background:#f5f5b0; }
+
+</style>
+</head>
+<body>
+  <div class="hero-wrapper">
+  <section class="detail-hero">
+    <div class="detail-menu">
+      <h1>National Park ESG Project</h1>
+    </div>
+  </section>
+<a href="../index.html#bottom" class="btn-main-floating">← 메인으로 돌아가기</a>
+  <section class="detail-content">
+    <div class="detail-card">
+    <p>POSCO M-TECH과 국립공원이 협업한 ESG 프로젝트에서, 자연 보호와 사회적 가치 실현을 위한 영상 콘텐츠 제작에 참여했습니다. 장애 유튜버 지원과 환경보호 활동을 시각적 자료와 영상으로 기록하며 ESG 경영의 의미를 깊게 체험했습니다.</p>
+    <ul>
+      <li>국립공원 ESG 지원 활동 콘텐츠 제작</li>
+      <li>POSCO M-TECH 협업 영상 프로젝트 참여</li>
+      <li>자연 환경 보호와 사회적 가치 홍보 영상 편집</li>
+    </ul>
+  </div>
+</section>
+<!-- 플로팅 버튼 -->
+<a href="../index.html#bottom" class="btn-main-floating">← 메인으로 돌아가기</a>
+<div id="contactBtnContainer">
+  <button id="contactBtn" class="floating-btn">문의사항 남기기</button>
+</div>
+
+<script>
+// 문의사항 버튼 클릭 → 구글폼 새 창
+const contactBtn = document.getElementById("contactBtn");
+contactBtn.addEventListener("click", () => {
+  window.open("https://forms.gle/YOUR_FORM_ID", "_blank");
+});
+</script>
+
+
+</body>
+</html>
